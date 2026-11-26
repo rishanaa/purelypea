@@ -1,0 +1,78 @@
+.page { container-type: inline-size; background: #fff; color: var(--brown); }
+.hero { height: 66.09375cqw; background: #ffa908; color: var(--cream); overflow: hidden; }
+.hero h1 { position: absolute; top: 14.6875cqw; left: 14.296875%; width: 71.484375%; font-size: 5.067568cqw; line-height: 1.14; white-space: nowrap; color: #fff; }
+.carousel { position: absolute; inset: 0; top: 20.46875cqw; touch-action: pan-y; user-select: none; }
+.carousel:focus-visible { outline-offset: -5px; }
+/* Figma's four recipe variants rotate the 1200px wheel by a quarter turn.
+   Match its 1.2501229s spring preset with a CSS overshoot curve. */
+.wheel { position: absolute; width: 93.75cqw; height: 93.75cqw; left: 3.125cqw; top: 2.265625cqw; transform: rotate(var(--rotation)); transition: transform 1.2501229s cubic-bezier(.34, 1.56, .64, 1); }
+.dish { --dish-angle: 0deg; position: absolute; width: 35.166667%; height: 35.166667%; padding: 0; background: transparent; border-radius: 50%; transform: rotate(calc(var(--rotation) + var(--dish-angle))); transition: transform 1.2501229s cubic-bezier(.34, 1.56, .64, 1); }
+.dish[data-position="0"] { left: 32.5%; top: 0; width: 35.083333%; }
+.dish[data-position="1"] { left: 64.833333%; top: 32.416667%; --dish-angle: 180deg; }
+.dish[data-position="2"] { left: 32.5%; top: 64.833333%; width: 35.083333%; }
+.dish[data-position="3"] { left: 0; top: 32.666667%; width: 35.75%; height: 34.666667%; --dish-angle: 180deg; }
+.dish img { object-fit: fill; }
+.caption { position: absolute; top: 35.390625cqw; left: 50%; transform: translateX(-50%); width: 17.96875%; text-align: center; font: 2.4375cqw/1.25 Righteous, sans-serif; }
+.caption[data-long] { width: 25.78125%; }
+.direction { position: absolute; top: 15.078125cqw; width: 6.09375cqw; height: 6.09375cqw; background: transparent; padding: 0; display: grid; place-items: center; }
+.direction::before { content: ""; display: block; width: 87.5%; height: 56.26%; background: url('/images/recipe-navigation-arrow.svg') center / contain no-repeat; }
+.next::before { transform: rotate(180deg); }
+.previous { left: 19.921875%; }
+.next { right: 20%; }
+.details { scroll-margin-top: 0; }
+.recipeIntro { height: 66.09375cqw; overflow: hidden; }
+.plate { position: absolute; width: 58.671875%; aspect-ratio: 1; left: -29.296875%; top: 6.640625cqw; }
+.plate img { object-fit: fill; }
+.recipeIntro h2 { position: absolute; left: 33.515625%; top: 50%; transform: translateY(-50%); width: 57.724872%; text-align: center; font-size: 7.327429cqw; line-height: 1.14; text-transform: uppercase; }
+.curvedArrow { position: absolute; left: 33.762431%; top: .222752cqw; width: 20.463417%; aspect-ratio: 1; transform: rotate(55.285555deg); transform-origin: top left; }
+.mobileArrow { display: none; }
+.leaf { position: absolute; left: 83.75%; top: 48.671875cqw; width: 5.852179%; aspect-ratio: 74.90789 / 86.41858; }
+.greenBurst, .orangeBurst { position: absolute; width: 4.119044%; aspect-ratio: 52.72376 / 86.3652; transform: rotate(107.363deg); transform-origin: top left; }
+.greenBurst { left: 8.528442%; top: 4.709167cqw; }
+.ingredients { min-height: 40cqw; display: grid; grid-template-columns: 39.108911% 52.241379%; gap: 8.64971%; padding: 6.640625cqw 4.296875% 7cqw 5.078125%; color: #dd5d60; font: 2.4375cqw/1.25 Righteous, sans-serif; }
+.ingredientCopy { padding-top: 2.421875cqw; }
+.ingredients h2, .preparation h2 { font-size: 5.067568cqw; line-height: 1.14; }
+.ingredients h2 { color: var(--brown); text-transform: uppercase; }
+.ingredients p { margin-top: 1.25cqw; text-transform: capitalize; }
+.ingredients table { width: 100%; border-collapse: collapse; text-align: left; align-self: start; }
+.ingredients th { color: var(--blue); font-family: Lilita, sans-serif; font-weight: 400; text-transform: uppercase; }
+.ingredients th, .ingredients td { padding: 0; vertical-align: top; }
+.ingredients th:first-child, .ingredients td:first-child { width: 70%; padding-right: 2cqw; }
+.ingredients td { text-transform: capitalize; }
+.ingredients td:last-child { white-space: nowrap; }
+.preparation { min-height: 62.421875cqw; padding: 20.078125cqw 4.6875% 10cqw; color: var(--cream); isolation: isolate; }
+.wave { position: absolute; inset: 0; z-index: -1; transform: rotate(180deg); }
+.wave img { object-fit: fill; }
+.orangeBurst { left: 39.387805%; top: -3.92394cqw; }
+.preparation h2 { width: 35.546875cqw; text-align: center; }
+.preparation ol { list-style: decimal; font: 2.4375cqw/1.25 Righteous, sans-serif; text-transform: capitalize; margin: 5.39cqw 0 0; padding-left: 3.6cqw; }
+@media (max-width: 600px) {
+  .hero { height: 381px; }
+  .hero h1 { left: 3.846154%; top: 113px; width: 92.307692%; font-size: clamp(23px, 7.439437cqw, 40px); text-align: center; }
+  .carousel { top: 111px; left: 50%; width: min(100%, 390px); transform: translateX(-50%); container-type: inline-size; }
+  .wheel { top: 88.6640625px; }
+  .caption { top: calc(88.6640625px + 33.125cqw); font-size: 2.4375cqw; }
+  .direction { top: calc(88.6640625px + 12.8125cqw); min-width: 44px; min-height: 44px; }
+  .recipeIntro { height: 377px; }
+  .plate { width: 256px; height: 256px; left: -144px; top: 69px; }
+  .recipeIntro h2 { left: 31.282051%; width: 67.435897%; font-size: clamp(22px, 6.936264cqw, 35px); }
+  .curvedArrow { width: 82.88266px; left: 44.009047%; top: 86px; transform: rotate(73.90836deg); }
+  .desktopArrow { display: none; }
+  .mobileArrow { display: block; }
+  .leaf { width: 35px; height: 33px; left: 82.051282%; top: 220px; }
+  .leaf img { object-fit: fill; }
+  .greenBurst { width: 19.51072px; height: 35.28673px; left: 12.752055%; top: 34.93826px; }
+  .ingredients { min-height: 356px; display: block; padding: 20px 20px 56px; font-size: 16px; line-height: 1.25; }
+  .ingredientCopy { padding: 0; text-align: center; }
+  .ingredients h2, .preparation h2 { font-size: 32px; line-height: 37px; }
+  .ingredients p { margin: 13px 0 0; font-size: 17px; line-height: 21px; }
+  .ingredients table { margin-top: 66px; }
+  .ingredients th:first-child, .ingredients td:first-child { width: 62.5%; padding-right: 12px; }
+  .preparation { min-height: 357px; padding: 24px 14px 32px; background: var(--coral); }
+  .wave, .orangeBurst { display: none; }
+  .preparation h2 { width: 100%; }
+  .preparation ol { margin: 12px 0 0; padding-left: 26px; font-size: 17px; line-height: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wheel, .dish { transition: none; }
+}

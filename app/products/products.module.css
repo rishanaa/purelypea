@@ -1,0 +1,59 @@
+.page { container-type: inline-size; background: var(--cream); color: var(--brown); }
+.hero { width: 100%; height: 66.09375cqw; min-height: 440px; color: var(--cream); background: radial-gradient(ellipse 96% 137% at 50% 118%, #dcf25b, var(--featured-color)); }
+.heroCopy { position: absolute; top: 22.9314%; left: 13.828125%; width: 72.2925%; color: white; }
+.heroCopy p { margin-left: 10.807%; font-family: Righteous, sans-serif; font-size: clamp(14px, 1.5625cqw, 28px); line-height: 1.25; }
+.heroCopy h1 { margin-top: -12px; font-size: 9.1764cqw; line-height: 1.143; text-transform: uppercase; text-align: center; }
+.featuredImage { position: absolute; left: 39.0625%; top: 32.3877%; width: 21.875%; height: 49.2823%; background: transparent; padding: 0; }
+.featuredImage img { object-fit: contain; animation: productFloat 500ms cubic-bezier(0, 0, .58, 1) infinite alternate; }
+@keyframes productFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3.769841%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .featuredImage img { animation: none; }
+}
+.selector { position: absolute; right: 3.828125%; bottom: 0; width: 39.140625%; height: 21.7494%; display: flex; align-items: flex-end; gap: 4.99%; }
+.option { position: relative; flex: 1 1 0; height: 79.35%; padding: 0; background: transparent; transition: height .25s, flex-grow .25s; }
+.option[aria-pressed="true"] { height: 100%; flex-grow: 1.26; }
+.option:focus-visible { outline-offset: -3px; border-radius: 8px; }
+.option img { object-fit: contain; }
+.section { padding-inline: 0; }
+.section h2 { font-size: 4.9856cqw; line-height: 1.143; margin-left: 4.765625%; }
+.combos { padding-top: 5.46875cqw; }
+.combos h2 { margin-left: 4.921875%; }
+.rail { display: flex; gap: 2.03125cqw; padding: 6px 4.609375% 10px; margin-top: calc(3.515625cqw - 6px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-padding-inline: 4.609375cqw; cursor: grab; }
+.rail::-webkit-scrollbar { display: none; }
+.combos .rail { margin-top: calc(5.859375cqw - 6px); }
+.rail[data-dragging] { cursor: grabbing; scroll-snap-type: none; }
+.rail:focus-visible { outline-offset: -3px; }
+.card { display: block; flex: 0 0 27.421875cqw; padding: 0; border-radius: 20px 20px 0 0; overflow: hidden; background: transparent; color: var(--brown); scroll-snap-align: start; cursor: inherit; text-align: center; }
+.card:focus-visible { outline-offset: 2px; }
+.art { display: block; position: relative; width: 100%; aspect-ratio: 351 / 462; background: var(--card-color); }
+.art img { position: absolute; object-fit: fill; user-select: none; }
+.price { display: grid; place-items: center; min-height: 4.609375cqw; background: var(--cream); font-family: Righteous, sans-serif; font-size: clamp(12px, 1.74107cqw, 31.34px); line-height: 1.25; white-space: nowrap; }
+.age { padding-top: calc(6.015625cqw - 10px); }
+.all { padding-top: calc(6.40625cqw - 10px); padding-bottom: calc(8.90625cqw - 10px); }
+.all .rail { gap: 4.140625cqw; }
+.dialog { max-height: 90dvh; overflow-y: auto; }
+.dialogPrice { margin-top: 20px; font-family: Righteous, sans-serif; }
+@media (max-width: 600px) {
+  .hero { height: 629px; min-height: 0; }
+  .heroCopy { top: 104px; left: 4%; width: 92%; }
+  .heroCopy p { margin-left: 0; text-align: center; font-size: 17px; line-height: 21px; }
+  .heroCopy h1 { margin-top: 11px; font-size: clamp(34px, 11.026cqw, 43px); line-height: 1.14; }
+  .featuredImage { left: calc(50% - 79px); top: 276px; width: 158px; height: 235.27px; }
+  .selector { right: 8px; bottom: 0; width: min(280px, calc(100% - 32px)); height: 102.75px; }
+  .section h2 { margin-left: 14px; font-size: clamp(34px, 10.442cqw, 40.725px); line-height: 47px; }
+  .combos { padding-top: 32.81px; }
+  .combos h2 { margin-left: 16px; }
+  .rail { gap: 11px; padding: 6px 14px 10px; margin-top: 19px; scroll-padding-inline: 14px; }
+  .combos .rail { margin-top: 28.19px; padding-inline: 16px; }
+  .card { flex-basis: 202.5px; border-radius: 12px 12px 0 0; }
+  .price { min-height: 34.04px; font-size: 12.86px; }
+  .age { padding-top: 26.42px; }
+  .all { padding-top: 34.42px; padding-bottom: 54px; }
+  .all h2 { margin-left: 24px; }
+  .all .rail { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11.24px; padding: 6px 18px 10px; margin-top: 20px; overflow: visible; cursor: auto; }
+  .grid .card { width: 100%; min-width: 0; border-radius: 10px 10px 0 0; cursor: pointer; }
+  .grid .price { min-height: 29px; font-size: 11px; }
+}

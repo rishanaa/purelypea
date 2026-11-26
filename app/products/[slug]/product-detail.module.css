@@ -1,0 +1,58 @@
+.page { --detail-ink: #532d25; --detail-brown: #9d3e23; container-type: inline-size; background: var(--cream); color: var(--detail-ink); font-family: Righteous, sans-serif; }
+.navigation { height: 8.90625cqw; background: var(--blue); color: var(--cream); }
+.product { display: grid; grid-template-columns: 47.672414% minmax(0, 1fr); gap: 5.431034%; padding: 7.65625cqw 4.6875% 8.125cqw; min-height: 64.375cqw; }
+.gallery { position: relative; width: 100%; aspect-ratio: 553 / 622; border-radius: 2.8125cqw; background: var(--gallery-color); overflow: hidden; }
+.backdrop { position: absolute; left: 6.690778%; top: 10.610932%; width: 86.799277%; aspect-ratio: 1; border-radius: 50%; background: color-mix(in srgb, var(--gallery-color) 55%, white); }
+.pouch { position: absolute; left: 17.359855%; top: 8.199357%; width: 65.099458%; height: 84.405145%; }
+.pouch img { object-fit: fill; }
+.summary { padding-top: 3.28125cqw; }
+.summary h1 { font-size: 6.71875cqw; line-height: 1.14; overflow-wrap: anywhere; }
+.packSize { margin: 1.171875cqw 0 0 .46875cqw; font-size: 1.953125cqw; line-height: 1.24; color: var(--detail-brown); }
+.packSize span { padding: 0 .35em; }
+.description { max-width: 36.875cqw; font-size: 1.796875cqw; line-height: 1.26; margin: 3.125cqw 0 0 .46875cqw; white-space: pre-line; }
+.price { font: 4.0625cqw/1.14 Lilita, sans-serif; margin: 3.28125cqw 0 0 .3125cqw; }
+.addToCart { display: block; width: min(100%, 31.25cqw); min-height: 5.9375cqw; margin: 3.203125cqw 0 0 .3125cqw; border-radius: 1.25cqw; background: var(--detail-brown); color: white; font: 2.8125cqw/1.14 Lilita, sans-serif; padding: 1cqw; }
+.addToCart:hover { filter: brightness(1.1); }
+.viewCart { display: block; background: transparent; color: var(--detail-brown); padding: 10px 0; text-decoration: underline; }
+.information { min-height: 31.40625cqw; background: #f8e6d6; padding: 4.21875cqw 4.6875% 5.625cqw; }
+.information h2 { font-size: 4.0625cqw; line-height: 1.14; }
+.information > p { margin: 1.171875cqw 0 0 .15625cqw; font-size: 1.796875cqw; line-height: 1.26; }
+.cards { display: grid; grid-template-columns: 354fr 346fr 395fr; gap: 2.5cqw; margin-top: 3.515625cqw; }
+.infoCard { min-width: 0; min-height: 10cqw; border-radius: 1.5625cqw; background: var(--cream); padding: 1.5625cqw 1.875cqw; }
+.infoCard h3 { font: 2.265625cqw/1.14 Lilita, sans-serif; color: var(--detail-brown); margin: 0; }
+.infoCard p { margin-top: 1.171875cqw; font-size: 1.5625cqw; line-height: 1.25; }
+.cartDialog { width: min(92vw, 560px); max-height: 90dvh; overflow-y: auto; }
+.cartNote { font-size: 14px !important; }
+.cartItems { list-style: none; margin: 24px 0; padding: 0; }
+.cartItems li { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid #b64f1e33; }
+.cartItems a { font-family: Righteous, sans-serif; }
+.cartItems a:hover { text-decoration: underline; }
+.quantity { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+.quantity button { min-width: 36px; min-height: 36px; border-radius: 6px; background: #f8e6d6; color: var(--brown); padding: 4px 10px; }
+.quantity button:disabled { opacity: .4; cursor: default; }
+.quantity output { min-width: 24px; text-align: center; }
+.quantity .remove { background: transparent; text-decoration: underline; }
+.subtotal { font-family: Righteous, sans-serif; }
+.continueShopping { display: block; margin-top: 24px; background: var(--brown); color: var(--cream); padding: 14px; text-align: center; border-radius: 8px; }
+@media (max-width: 600px) {
+  .navigation { height: 75px; }
+  .product { display: block; padding: 36px 20px 33px; min-height: 840px; }
+  .gallery { max-width: 350px; margin: 0 auto; border-radius: 23px; }
+  .summary { padding-top: 32px; }
+  .summary h1 { font-size: 44px; line-height: 50px; }
+  .packSize { margin: 12px 0 0; font-size: 18px; line-height: 22px; }
+  .description { max-width: none; min-height: 120px; margin: 12px 0 0; font-size: 19px; line-height: 24px; }
+  .price { margin: 12px 0 0; font-size: 32px; line-height: 37px; }
+  .addToCart { width: 100%; min-height: 66.5px; margin: 14px 0 0; border-radius: 14px; font-size: 32px; padding: 12px; }
+  .information { min-height: 550px; padding: 22px 20px 28.5px; }
+  .information h2 { font-size: 33px; line-height: 38px; }
+  .information > p { margin: 12px 0 0; font-size: 18px; line-height: 22px; }
+  .cards { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 12px; }
+  .infoCard { min-height: 126.55px; padding: 20px 24px; border-radius: 20px; }
+  .infoCard h3 { font-size: 29px; line-height: 33px; }
+  .infoCard p { margin-top: 14.5px; font-size: 20px; line-height: 25px; }
+  .infoCard:nth-child(2) { min-height: 129.48px; }
+  .infoCard:last-child { min-height: 113.42px; padding: 18px 21px; border-radius: 18px; }
+  .infoCard:last-child h3 { font-size: 25.7px; line-height: 29px; }
+  .infoCard:last-child p { margin-top: 13.5px; font-size: 17.72px; line-height: 22px; }
+}

@@ -1,0 +1,73 @@
+.page { --contact-brown: #a6471c; --contact-ink: #43352d; container-type: inline-size; background: var(--cream); color: var(--contact-ink); font-family: Righteous, sans-serif; }
+.hero { height: 39.53125cqw; color: var(--cream); isolation: isolate; }
+.heroBackground { position: absolute; inset: 0 0 auto; height: 34.6875cqw; background: var(--blue); z-index: -1; }
+.heroCopy { position: absolute; top: 11.171875cqw; left: 4.6875%; }
+.hero h1 { font-size: 7.34375cqw; line-height: 1.14; color: white; }
+.heroCopy p { font-size: 2.03125cqw; line-height: 1.23; margin: 1.328125cqw 0 0 .3125cqw; }
+.heroCopy p + p { margin-top: .703125cqw; }
+.wave { position: absolute; top: 34.53125cqw; left: 0; width: 100%; height: 4.66115cqw; background: url('/images/contact-wave-desktop.svg') 0 0 / 100% 100% no-repeat; z-index: -1; }
+.bearDesktop { position: absolute; top: 16.40625cqw; left: 57.8515625%; width: 27.421875%; aspect-ratio: 351 / 305; pointer-events: none; }
+.bearMobile { display: none; }
+.content { display: grid; grid-template-columns: minmax(0, 1fr) 52.0689655%; gap: 10%; padding: 4.21875cqw 4.6875% 9.84375cqw; }
+.support { padding-top: 3.59375cqw; }
+.support h2 { color: var(--contact-brown); font-size: 4.6875cqw; line-height: 1.15; }
+.supportDescription { margin: 1.171875cqw 0 0 .15625cqw; font-size: 1.796875cqw; line-height: 1.26; }
+.email { display: inline-block; margin: 1.5625cqw 0 0 .15625cqw; font-size: 2.03125cqw; line-height: 1.23; color: #195767; }
+.email:hover { text-decoration: underline; }
+.support h3 { color: var(--contact-brown); font: 2.265625cqw/1.14 Lilita, sans-serif; margin: 8.046875cqw 0 0 .15625cqw; }
+.orderNote { margin: 1.484375cqw 0 0 .15625cqw; font-size: 1.5625cqw; line-height: 1.65; }
+.form { min-width: 0; min-height: 52.65625cqw; background: white; border: 2px solid #e8dacb; border-radius: 2.5cqw; padding: calc(2.578125cqw - 2px) calc(2.8125cqw - 2px) calc(3.203125cqw - 2px); scroll-margin-top: 24px; }
+.form h2 { color: var(--contact-brown); font-size: 3.59375cqw; line-height: 1.15; }
+.identity { display: grid; grid-template-columns: minmax(0, 248fr) minmax(0, 260fr); gap: 1.875cqw; margin-top: 2.421875cqw; }
+.field { min-width: 0; }
+.field label { display: block; font-size: 1.484375cqw; line-height: 1.26; }
+.field input, .field textarea { display: block; width: 100%; min-width: 0; margin-top: .78125cqw; border: 1px solid #baaaa0; border-radius: .9375cqw; background: #fffcf7; color: var(--contact-ink); font: 1.40625cqw/1.25 Righteous, sans-serif; padding: 1.015625cqw 1.171875cqw; }
+.field input { height: 4.296875cqw; }
+.field textarea { height: 11.09375cqw; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: #706059; opacity: 1; }
+.field input:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.subject { margin-top: 2.5cqw; }
+.message { margin-top: 2.578125cqw; }
+.send { display: block; margin-top: 2.890625cqw; width: 15.625cqw; min-height: 4.6875cqw; padding: .78125cqw; border-radius: 1.09375cqw; color: white; background: var(--contact-brown); font: 1.875cqw/1.125 Lilita, sans-serif; }
+.send:hover { filter: brightness(1.1); }
+.status { font-size: clamp(14px, 1.25cqw, 20px); line-height: 1.5; margin-top: 16px; overflow-wrap: anywhere; }
+.status a { color: #195767; text-decoration: underline; }
+@media (max-width: 600px) {
+  .hero { height: 398px; }
+  .heroBackground { height: 363px; }
+  .heroCopy { top: 90px; left: 20px; width: calc(100% - 40px); text-align: center; }
+  .hero h1 { font-size: 43px; line-height: 49px; }
+  .heroCopy p { font-size: 19px; line-height: 24px; max-width: 350px; margin: 12px auto 0; }
+  .heroCopy p + p { margin-top: 9px; }
+  /* Scale and position the desktop wave with the desktop mascot mask.
+     Both use 200 / 351 of the source geometry, keeping the lower contour aligned. */
+  .wave { top: 360.404558px; height: 33.995852px; background-image: url('/images/contact-wave-desktop.svg'); background-size: 729.344729px 33.995852px; background-position: calc(100% + 100.407407px) 0; }
+  .bearDesktop { display: none; }
+  .bearMobile { display: block; position: absolute; width: 200px; aspect-ratio: 351 / 305; right: 7px; bottom: -4px; pointer-events: none; }
+  .content { display: block; padding: 0 0 24.744385px; }
+  .support { min-height: 253px; padding: 20px 14px 36px; }
+  .support h2 { font-size: 31px; line-height: 35px; }
+  .supportDescription { margin: 12px 0 0; font-size: 17px; line-height: 21px; }
+  .email { margin: 12px 0 0; font-size: 21px; line-height: 26px; }
+  .support h3 { margin: 12px 0 0; font-size: 22px; line-height: 25px; }
+  .orderNote { margin: 12px 0 0; font-size: 17px; line-height: 21px; }
+  .form { margin: 0 20px; min-height: 568.255615px; border: 0; border-radius: 32px; padding: 20px 16px 24px; }
+  .form h2 { font-size: clamp(24px, 7.435897cqw, 36px); line-height: 33px; }
+  .identity { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 12px; }
+  .field label { font-size: 17px; line-height: 21px; }
+  .field input, .field textarea { margin-top: 12px; padding: 14px 16px; font-size: 17px; line-height: 22px; border: 0; border-radius: 12px; }
+  .field input { height: 55px; }
+  .subject, .message { margin-top: 16px; }
+  .subject input { height: 33px; font-size: 16px; padding: 6px 10px; border-radius: 7px; }
+  .message textarea { height: 85px; min-height: 85px; padding: 10px; font-size: 16px; border-radius: 7px; }
+  .subject input::placeholder, .message textarea::placeholder { font-size: 10.76px; }
+  .send { margin-top: 16px; width: 185px; min-height: 55.5px; border-radius: 13px; padding: 12px; font-size: 24px; line-height: 27px; }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .content { grid-template-columns: minmax(0, 1fr) 56%; gap: 6%; }
+  .field label, .field input, .field textarea { font-size: 14px; }
+  .field input { min-height: 44px; }
+  .form h2 { font-size: 28px; }
+  .identity { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .send { min-height: 44px; width: 160px; font-size: 20px; }
+}
