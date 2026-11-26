@@ -59,11 +59,11 @@ export default function ProductDetailPage({ product }: { product: ProductDetail 
       <section className={styles.product} aria-labelledby="product-name">
         <div className={styles.gallery} style={{ "--gallery-color": product.color } as CSSProperties}>
           <div className={styles.backdrop} />
-          <div className={styles.pouch}><Image src={product.galleryImage} alt={`${product.name} ${product.weight} pouch`} fill sizes="(max-width: 600px) 60vw, 29vw" priority /></div>
+          <div className={styles.pouch}><Image src={product.galleryImage} alt={product.name} fill sizes="(max-width: 600px) 60vw, 29vw" priority style={product.image.startsWith("combo-") ? { objectFit: "contain" } : undefined} /></div>
         </div>
         <div className={styles.summary}>
           <h1 id="product-name">{product.name}</h1>
-          <p className={styles.packSize}>{product.subtitle} <span>·</span> {product.weight}</p>
+          <p className={styles.packSize}>{product.subtitle}{product.weight && <> <span>·</span> {product.weight}</>}</p>
           <p className={styles.description}>{product.description}</p>
           <p className={styles.price}>₹{product.price}</p>
           <button className={styles.addToCart} onClick={addToCart}>Add to cart</button>

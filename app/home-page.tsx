@@ -15,7 +15,7 @@ export default function HomePage() {
   const dialog = useRef<HTMLDialogElement>(null);
   const comboDrag = useRef({ startX: 0, scrollLeft: 0, active: false, moved: false });
   const featured = useRef<HTMLElement>(null);
-  const pouch = useRef<HTMLDivElement>(null);
+  const pouch = useRef<HTMLAnchorElement>(null);
   const product = products[selected];
   useEffect(() => {
     const section = featured.current;
@@ -81,14 +81,14 @@ export default function HomePage() {
       </section>
       <div className="product-and-combos" style={{ "--product-color": product.color } as CSSProperties}>
         <section className="featured" id="products" aria-labelledby="product-title" ref={featured}>
-          <div className="featured-art" key={product.image} ref={pouch}><Artwork name={product.image} alt={`${product.name} pouch`} /></div>
+          <Link className="featured-art" key={product.image} ref={pouch} href={productHref(product.image)} aria-label={`View ${product.name}`}><Artwork name={product.image} alt={`${product.name} pouch`} /></Link>
           <div className="product-information">
             <div className="product-copy" aria-live="polite">
               <h2 id="product-title" className={selected === 1 || selected === 2 ? "long-title" : ""}>{product.name}</h2><p>{product.description}</p>
-              <a className="product-link" href={productHref(product.image)}>View Product</a>
+              <Link className="product-link" href={productHref(product.image)}>View Product</Link>
             </div>
             <div className="product-selector" aria-label="Choose a product">
-              {products.map((item, i) => <button key={item.image} className={selected === i ? "product-option selected" : "product-option"} style={{ "--tile-color": item.color } as CSSProperties} aria-label={`Show ${item.name}`} aria-pressed={selected === i} onClick={() => setSelected(i)}><span className="tile-background" /><Artwork name={`${item.image}-thumb`} /></button>)}
+              {products.map((item, i) => <Link href={productHref(item.image)} key={item.image} className={selected === i ? "product-option selected" : "product-option"} style={{ "--tile-color": item.color } as CSSProperties} aria-label={`View ${item.name}`} onMouseEnter={() => setSelected(i)} onFocus={() => setSelected(i)}><span className="tile-background" /><Artwork name={`${item.image}-thumb`} /></Link>)}
             </div>
           </div>
         </section>
@@ -127,7 +127,7 @@ export default function HomePage() {
                 event.stopPropagation();
               }
             }}>
-            {combos.map((combo, i) => <button className="combo-card" key={combo.name} onClick={() => showDetail(combo.name, `Get it for ₹${combo.price} — ${combo.discount}% off.`, `combo-${i + 1}`)}><span className="combo-art"><Artwork name={`combo-${i + 1}`} alt={combo.name} /></span><span className="combo-price">Get It For ₹{combo.price} -{combo.discount}%</span></button>)}
+            {combos.map((combo, i) => <Link className="combo-card" key={combo.name} href={productHref(`combo-${i + 1}`)} aria-label={`View ${combo.name}`}><span className="combo-art"><Artwork name={`combo-${i + 1}`} alt={combo.name} /></span><span className="combo-price">Get It For ₹{combo.price} -{combo.discount}%</span></Link>)}
           </div>
         </section>
       </div>

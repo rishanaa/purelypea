@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { SiteHeader, SiteFooter } from "../site-chrome";
 import { products, combos } from "../product-data";
@@ -55,20 +56,19 @@ function ProductRail({ children, label, grid = false }: { children: ReactNode; l
   </div>;
 }
 
-function Card({ name, image, price, discount, color, slot, onClick, href }: {
-  name: string; image: string; price: number; discount: number; color: string; slot: number[]; onClick?: () => void; href?: string;
+function Card({ name, image, price, discount, color, slot, href }: {
+  name: string; image: string; price: number; discount: number; color: string; slot: number[]; href: string;
 }) {
   const [left, top, width, height] = slot;
-  const Tag = href ? "a" : "button";
-  return <Tag href={href} className={styles.card} style={{ "--card-color": color } as CSSProperties}
-    aria-label={`View ${name}, ₹${price}, ${discount}% off`} onClick={onClick}>
+  return <Link href={href} className={styles.card} style={{ "--card-color": color } as CSSProperties}
+    aria-label={`View ${name}, ₹${price}, ${discount}% off`}>
     <span className={styles.art}>
       <Image src={`/images/${image}.webp`} alt={name} width={width} height={height}
         sizes="(max-width: 600px) 200px, 28vw" draggable={false}
         style={{ left: `${left / 351 * 100}%`, top: `${top / 462 * 100}%`, width: `${width / 351 * 100}%`, height: `${height / 462 * 100}%` }} />
     </span>
     <span className={styles.price}>Get It For ₹{price} -{discount}%</span>
-  </Tag>;
+  </Link>;
 }
 
 export default function ProductsPage() {
@@ -103,7 +103,7 @@ export default function ProductsPage() {
         <h2 id="combos-title">Explore Combos</h2>
         <ProductRail label="Product combos, swipe or use arrow keys to browse">
           {combos.map((combo, index) => <Card key={combo.name} {...combo} image={`combo-${index + 1}`} color={["#fc666d1a", "#a5c0011a", "#ffa9081a", "#b64f1e1a"][index]} slot={[12, 33, 326, 408]}
-            onClick={() => openDetail({ title: combo.name, text: "Explore familiar PurelyPea favourites together in this combo.", image: `combo-${index + 1}`, price: combo.price, discount: combo.discount })} />)}
+            href={productHref(`combo-${index + 1}`)} />)}
         </ProductRail>
       </section>
 

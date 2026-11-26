@@ -29,7 +29,7 @@
 @media(min-width:601px) and (max-width:1000px){.footer{min-height:400px}.hero h1{font-size:5.06757vw}}
 @media(max-width:600px){.hero-art{width:min(calc(100% - 10px),420px);height:min(calc((100vw - 10px)*.5628),236.4px);left:50%;transform:translateX(-50%)}}
 /* Featured products float in place without an entrance animation. */
-.featured-art{z-index:1;pointer-events:none}
+.featured-art{z-index:1;pointer-events:auto}
 .featured::before{content:'';position:absolute;pointer-events:none;width:89.84375%;aspect-ratio:1;left:50%;top:-48.64865%;border:min(11.796875vw,212.34375px) solid #fff9f01c;border-radius:50%;filter:blur(5.5px)}
 @media(min-width:601px){.featured-art{left:62.734375%;top:22.184685%}}
 @media(max-width:600px){.featured::before{width:115%;left:35%;top:-25%;border-width:50px}}
